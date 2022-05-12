@@ -2,12 +2,12 @@
 
 function increment(e) {
     let value = e.currentTarget.parentNode.childNodes[4].innerHTML //находим значение в нужном спане
-    value = (Number(value) + 1).toString()
+    e.currentTarget.parentNode.childNodes[4].innerHTML = (Number(value) + 1).toString()
 
 }
 function decrement(e) {
     let value = e.currentTarget.parentNode.childNodes[4].innerHTML
-    value = (Number(value) - 1).toString()
+    e.currentTarget.parentNode.childNodes[4].innerHTML = (Number(value) - 1).toString()
 }
 
 
