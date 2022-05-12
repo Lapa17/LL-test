@@ -1,23 +1,23 @@
 
 
 function increment(e) {
-    let value = e.currentTarget.parentNode.childNodes[4].innerHTML
-    e.currentTarget.parentNode.childNodes[4].innerHTML = (Number(value) + 1).toString()
+    let value = e.currentTarget.parentNode.childNodes[4].innerHTML //находим значение в нужном спане
+    value = (Number(value) + 1).toString()
 
 }
 function decrement(e) {
     let value = e.currentTarget.parentNode.childNodes[4].innerHTML
-    e.currentTarget.parentNode.childNodes[4].innerHTML = (Number(value) - 1).toString()
+    value = (Number(value) - 1).toString()
 }
 
 
-let index = 0
+let index = 0 
 
 function createCounter (number = 0) {
     let root = document.getElementById('root')
-    root.innerHTML += "<div class='wrapper'><button onclick='increment(event)' class='plus'>+</button><button onclick='decrement(event)' class='minus'>-</button> <span>Counter:</span><span class='number' ></span></div>"
-    let spans = document.getElementsByClassName('number')
-    spans[index].innerHTML = number.toString();
+    root.innerHTML += "<div class='wrapper'><button onclick='increment(event)' class='plus'>+</button><button onclick='decrement(event)' class='minus'>-</button> <span>Counter:</span><span class='number' ></span></div>" // создаем html
+    let spans = document.getElementsByClassName('number') //находим все спаны по классу
+    spans[index].innerHTML = number.toString(); // в нужный спан записываем значение
     index++
     return {
         counter: number,
@@ -26,10 +26,9 @@ function createCounter (number = 0) {
         },
         decrement: function (){
             return this.counter -= 1
-        }
+        },
     }
 }
-
 
 
 const counter_1 = createCounter(15)
